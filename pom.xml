@@ -8,6 +8,12 @@
     <artifactId>SNMP_Tool</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.tnm4j</groupId>
+            <artifactId>tnm4j</artifactId>
+            <version>1.0.11</version>
+        </dependency>
+    </dependencies>
     
 </project>
