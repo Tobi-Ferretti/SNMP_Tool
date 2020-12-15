@@ -5,7 +5,7 @@ Das Programm braucht die Bibliothek
 [tnm4j](https://github.com/soulwing/tnm4j). 
 Java Version 1.8 verwendet und SDK default.
 
-#Projekt selbst ausführen
+# Projekt selbst ausführen
 Um den Scanner selbst zu erstellen, importieren Sie das Projekt in Ihre bevorzugte IDE. Für dieses Beispiel werde ich IntelliJ IDEA (Ultimate Version) verwenden. Die Community Version kann kostenlos von [hier](https://www.jetbrains.com/idea/download/#section=windows) heruntergeladen werden.
 
 1. Öffnen Sie IntelliJ IDEA.
