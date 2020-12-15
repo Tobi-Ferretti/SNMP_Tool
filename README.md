@@ -1,8 +1,7 @@
 
 
 # Dependencies
-Das Programm braucht die Bibliothek
-[tnm4j](https://github.com/soulwing/tnm4j). 
+Das Programm verwendet die Bibliothek [tnm4j](https://github.com/soulwing/tnm4j).
 Java Version 1.8 verwendet und SDK default.
 
 # Projekt selbst ausführen
