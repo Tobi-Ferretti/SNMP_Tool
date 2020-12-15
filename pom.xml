@@ -6,7 +6,7 @@
 
     <groupId>it.fallmerayer.com</groupId>
     <artifactId>SNMP_Tool</artifactId>
-    <version>0.5</version>
+    <version>1.0</version>
 
 
     <properties>
