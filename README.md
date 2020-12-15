@@ -17,7 +17,7 @@ Um den Scanner selbst zu erstellen, importieren Sie das Projekt in Ihre bevorzug
 8. Das war's schon. Jetzt nur noch auf den grünen Play-Button drücken und die Anwendung sollte starten.
 
 # SNMP Tool Scan
-Die GUI kann jedoch schon einen Host, ein Netzwerk oder eine Range scannen.
+Die GUI kann einen Host, ein ganzes Netzwerk oder eine benutzerdefinierte Range des Netzwerks scannen.
 Die Ergebnisse werden dann in der GUI dargestellt, bei keinem Ergebnis oder
 Misserfolg bekommt man einen Output in der Konsole.
 
