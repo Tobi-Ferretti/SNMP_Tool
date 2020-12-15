@@ -9,6 +9,8 @@
         <module name="SNMP_Tool" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="10" />
+    <bytecodeTargetLevel>
+      <module name="SNMP_Tool" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
