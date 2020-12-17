@@ -44,7 +44,6 @@ auch eine Anfrage an das ganze Netz senden oder eine Range angeben.
 * Methode wechseln (Get und GetNext)
 * GUI
 #### Wird noch implementiert
-* Von der gescannten Adresse mindestens 6 verschiedene Informationen aus-
-  lesen
+* Von der gescannten Adresse mindestens 6 verschiedene Informationen auslesen
 * Von einer bestimmten IP-Adresse mittels OID Informationen auslesen
 * Änderungen des Community Strings unterstützen und standardmäßig public und private als String verwenden
