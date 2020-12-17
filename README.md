@@ -29,5 +29,22 @@ Um ein Netzwerk zu scannen, muss man im Feld die IP des Host eintragen und dann
 die Methode auswählen. Beim Klick auf Scan wird eine Anfrage geschickt. Man kann
 auch eine Anfrage an das ganze Netz senden oder eine Range angeben.
 # GUI
+* So sieht der erste Entwurf der GUI aus, man kann zwischen Host, Netzwerk und Range switchen.
+*  Man kann die Ip Adresse in die Felder eingeben und scannen.
+*  Man kann zwischen den Methoden get und getNext umstellen.
+*  Das Ergebnis wird in der Box darunter ausgegeben.
+
 ![GUI](/Image/GUI.png)
 # Projekt Status
+#### Funktioniert bereits
+
+* Scannen des Host
+* Scannen eines Netzwerks
+* Scan einer benutzerdefinierten Range
+* Methode wechseln (Get und GetNext)
+* GUI
+#### Wird noch implementiert
+* Von der gescannten Adresse mindestens 6 verschiedene Informationen aus-
+  lesen
+* Von einer bestimmten IP-Adresse mittels OID Informationen auslesen
+* Änderungen des Community Strings unterstützen und standardmäßig public und private als String verwenden
