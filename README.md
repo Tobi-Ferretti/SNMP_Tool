@@ -5,7 +5,7 @@ Das Programm verwendet die Bibliothek [tnm4j](https://github.com/soulwing/tnm4j)
 Java Version 1.8 verwendet und SDK default.
 
 # Jar ausführen
-Laden sie die Jar Datei unter den letzten Release herunter. Führen sie es mit der Eingabeauforderung (CMD) mit dem Befehl `java -jar [JAR-NAME]` aus.
+Laden sie die Jar Datei unter den letzten Release herunter. Führen sie es mit der Eingabeaufforderung (CMD) mit dem Befehl `java -jar [JAR-NAME]` aus.
 # Projekt selbst in IDE ausführen
 Um den Scanner selbst auszuführen, importieren Sie das Projekt in Ihre bevorzugte IDE. Für dieses Beispiel werde ich IntelliJ IDEA (Ultimate Version) verwenden. Die Community Version kann kostenlos von [hier](https://www.jetbrains.com/idea/download/#section=windows) heruntergeladen werden.
 
@@ -18,12 +18,16 @@ Um den Scanner selbst auszuführen, importieren Sie das Projekt in Ihre bevorzug
 7. Optional können Sie auch den Namen auf Main setzen. Bestätigen Sie mit OK.
 8. Das war's schon. Jetzt nur noch auf den grünen Play-Button drücken und die Anwendung sollte starten.
 
-# SNMP Tool Scan
+# Funktionen
+   ### Adresse mittels SNMP abfragen
 Die GUI kann einen Host, ein ganzes Netzwerk oder eine benutzerdefinierte Range des Netzwerks scannen.
 Die Ergebnisse werden dann in der GUI dargestellt, bei keinem Ergebnis oder
 Misserfolg bekommt man einen Output in der Konsole.
 
-# Starte Scan
+##### Starte Scan
 Um ein Netzwerk zu scannen, muss man im Feld die IP des Host eintragen und dann 
 die Methode auswählen. Beim Klick auf Scan wird eine Anfrage geschickt. Man kann
 auch eine Anfrage an das ganze Netz senden oder eine Range angeben.
+# GUI
+![GUI](/Image/GUI.png)
+# Projekt Status
