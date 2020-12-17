@@ -4,7 +4,9 @@
 Das Programm verwendet die Bibliothek [tnm4j](https://github.com/soulwing/tnm4j).
 Java Version 1.8 verwendet und SDK default.
 
-# Projekt selbst ausführen
+# Jar ausführen
+Laden sie die Jar Datei unter den letzten Release herunter. Führen sie es mit der Eingabeauforderung (CMD) mit dem Befehl `java -jar [JAR-NAME]` aus.
+# Projekt selbst in IDE ausführen
 Um den Scanner selbst auszuführen, importieren Sie das Projekt in Ihre bevorzugte IDE. Für dieses Beispiel werde ich IntelliJ IDEA (Ultimate Version) verwenden. Die Community Version kann kostenlos von [hier](https://www.jetbrains.com/idea/download/#section=windows) heruntergeladen werden.
 
 1. Öffnen Sie IntelliJ IDEA.
