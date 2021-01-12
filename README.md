@@ -19,7 +19,7 @@ Um den Scanner selbst auszuführen, importieren Sie das Projekt in Ihre bevorzug
 8. Das war's schon. Jetzt nur noch auf den **grünen Play-Button** drücken und die Anwendung sollte starten.
 
 # Projekt Status
-Projekt ist fertiggestellt!
+Projekt ist fertiggestellt, kann jedoch noch einige Bugs enthalten.
 #### Übersicht der Funktionen
 
 * Scannen des Host
@@ -35,7 +35,7 @@ Projekt ist fertiggestellt!
 # Funktionen
    ### Adresse mittels SNMP abfragen
 Die GUI kann **einen Host, ein ganzes Netzwerk oder eine benutzerdefinierte Range des Netzwerks** scannen.
-Die Ergebnisse werden dann in der GUI dargestellt, bei keinem Ergebnis oder Fehler bekommt man einen Output in der Konsole.
+Die Ergebnisse werden dann in der GUI dargestellt, bei keinem Ergebnis oder Fehler wird eine Fehlermeldung ausgegeben.
 
 ##### Starte Scan
 Um ein Netzwerk zu scannen, muss man im Feld die **IP des Host** eintragen und dann 
