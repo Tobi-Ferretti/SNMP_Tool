@@ -11,11 +11,11 @@ public class Scanner {
     //Scannt ein ganzes Netzwerk von der Start-IP bis hin zur Broadcast-IP welche mittels der Maske berechnet wird.
     public static void scanNetwork(String ip, int mask, List<String> mibs, List<String> oids, List<String> communities, boolean useGet) {
         if(ip == null || ip.trim().isEmpty()) {
-            throw new IllegalArgumentException("IP cannot be empty!");
+            throw new IllegalArgumentException("IP kann nicht leer sein");
         }
 
         if(mask < 0 || mask > 32) {
-            throw new IllegalArgumentException("Mask has to be smaller than 32 and greater than 0");
+            throw new IllegalArgumentException("Maske muss zwischen 0 und 32 sein");
         }
 
 
@@ -28,11 +28,11 @@ public class Scanner {
     //Scannt das ganze Netzwerk ab der StartIP
     public static void scanNetwork(String startIP, String endIP, List<String> mibs, List<String> oids, List<String> communities, boolean useGet) {
         if(startIP == null || startIP.trim().isEmpty()) {
-            throw new IllegalArgumentException("Start-IP cannot be empty!");
+            throw new IllegalArgumentException("Start-IP ist leer");
         }
 
         if(endIP == null || endIP.trim().isEmpty()) {
-            throw new IllegalArgumentException("End-IP cannot be empty!");
+            throw new IllegalArgumentException("End-IP ist leer");
         }
 
 
@@ -44,7 +44,7 @@ public class Scanner {
     //Scannt einzelen IP
     public static void scanIP(String ip, List<String> mibs, List<String> oids, List<String> communities, boolean useGet) {
         if(ip == null || ip.trim().isEmpty()) {
-            throw new IllegalArgumentException("IP cannot be empty!");
+            throw new IllegalArgumentException("IP kann nicht leer sein");
         }
 
         communities = StandardSettings.getCommunities(communities);

@@ -18,6 +18,20 @@ Um den Scanner selbst auszuführen, importieren Sie das Projekt in Ihre bevorzug
 7. Optional können Sie auch den Namen auf Main setzen. Bestätigen Sie mit OK.
 8. Das war's schon. Jetzt nur noch auf den **grünen Play-Button** drücken und die Anwendung sollte starten.
 
+# Projekt Status
+Projekt ist fertiggestellt!
+#### Übersicht der Funktionen
+
+* Scannen des Host
+* Scannen eines Netzwerks
+* Scan einer benutzerdefinierten Range
+* Methode wechseln (Get und GetNext)
+* GUI
+* Anfragen können an verschiedene Communities gleichzeitig geschickt werden
+* Traps/Informs können abgehört werden
+* Der abzuhörende Port ist änderbar
+* Es können eigene MIBs, OIDs und Communities hinzugefügt werden
+
 # Funktionen
    ### Adresse mittels SNMP abfragen
 Die GUI kann **einen Host, ein ganzes Netzwerk oder eine benutzerdefinierte Range des Netzwerks** scannen.
@@ -27,22 +41,19 @@ Die Ergebnisse werden dann in der GUI dargestellt, bei keinem Ergebnis oder Fehl
 Um ein Netzwerk zu scannen, muss man im Feld die **IP des Host** eintragen und dann 
 die **Methode** auswählen. Beim Klick auf **Scan** wird eine **Anfrage geschickt**. Man kann
 auch eine Anfrage an das **ganze Netz senden oder eine Range** angeben.
+
+### Trap-Listner
+Um den Listner zu aktivieren, muss man den **Haken setzten**, dabei hört der Listner auf Port `187`, dieser Port kann auch beliebig geändert werden.
+
+![TrapServer](/Image/TrapServer.png)
+
+#### MIBs, OIDS und Communities
+`MIBs`, `OIDS` und `Communities` können in den Einstellungen beliebig **hinzugefügt, bearbeitet und gelöscht** werden
+
+![Settings](Image/Settings.png)
 # GUI
-* So sieht der erste Entwurf der GUI aus, man kann zwischen Host, Netzwerk und Range wechseln.
-*  Man kann die Ip Adresse in die Felder eingeben und scannen.
-*  Man kann zwischen den Methoden get und getNext umstellen.
-*  Das Ergebnis wird in der Box darunter ausgegeben.
+Die grafische Oberfläche wurde mit der Bibliothek [JFoenix](https://github.com/jfoenixadmin/JFoenix) entwickelt. Diese Bibliothek benutzt die Elemente vom Google **Material Design**. 
 
 ![GUI](/Image/GUI.png)
-# Projekt Status
-#### Funktioniert bereits
 
-* Scannen des Host
-* Scannen eines Netzwerks
-* Scan einer benutzerdefinierten Range
-* Methode wechseln (Get und GetNext)
-* GUI
-#### Wird noch implementiert
-* Von der gescannten Adresse mindestens 6 verschiedene Informationen auslesen
-* Von einer bestimmten IP-Adresse mittels OID Informationen auslesen
-* Änderungen des Community Strings unterstützen und standardmäßig public und private als String verwenden
+

@@ -3,7 +3,6 @@ package it.fallmerayer.com.gui.elements;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.scene.control.TextField;
 
 public class NumberField extends JFXTextField {
 
@@ -17,6 +16,30 @@ public class NumberField extends JFXTextField {
         setMinValue(minValue);
         setPrefWidth(prefWidth);
         registerListener();
+    }
+
+    public final void setMaxValue(int maxValue) {
+        this.maxValue.set(maxValue);
+    }
+
+    public final int getMaxDigits() {
+        return this.maxDigits.get();
+    }
+
+    public final int getMaxValue() {
+        return this.maxValue.get();
+    }
+
+    public int getMinValue() {
+        return minValue.get();
+    }
+
+    public void setMinValue(int minValue) {
+        this.minValue.set(minValue);
+    }
+
+    public final void setMaxDigits(int maxDigits) {
+        this.maxDigits.set(maxDigits);
     }
 
     public NumberField() {
@@ -43,29 +66,6 @@ public class NumberField extends JFXTextField {
         });
     }
 
-    public void setMinValue(int minValue) {
-        this.minValue.set(minValue);
-    }
-
-    public final void setMaxDigits(int maxDigits) {
-        this.maxDigits.set(maxDigits);
-    }
-
-    public final void setMaxValue(int maxValue) {
-        this.maxValue.set(maxValue);
-    }
-
-    public final int getMaxDigits() {
-        return this.maxDigits.get();
-    }
-
-    public final int getMaxValue() {
-        return this.maxValue.get();
-    }
-
-    public int getMinValue() {
-        return minValue.get();
-    }
 
     public int getValue() {
         try {

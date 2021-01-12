@@ -76,6 +76,14 @@ public class Setting extends VBox {
         return title.get();
     }
 
+    public void setTitle(String title) {
+        this.title.set(title);
+    }
+
+    public ObservableList<String> getItems() {
+        return items;
+    }
+
     private ContextMenu getContextMenuForList(ListView<String> list) {
         ContextMenu menu = new ContextMenu();
 
@@ -92,13 +100,13 @@ public class Setting extends VBox {
 
                 switch (text) {
                     case "Add":
-                        Optional<String> result = AlertUtility.showInput(title.get(), "New Item: ");
+                        Optional<String> result = AlertUtility.showInput(title.get(), "Neuer Eintrag: ");
 
                         result.ifPresent((res) -> {
                             if(!items.contains(res)) {
                                 items.add(res);
                             } else {
-                                AlertUtility.showError("Es gibt bereits einen Eintrag mit diesem Wert!");
+                                AlertUtility.showError("Dieser Eintrag ist bereits vorhanden");
                             }
                         });
                         break;
@@ -106,14 +114,14 @@ public class Setting extends VBox {
                         if(list.getSelectionModel().getSelectedItem() != null) {
                             list.edit(list.getSelectionModel().getSelectedIndex());
                         } else {
-                            AlertUtility.showInformation("Ein Eintrag muss ausgewählt sein!");
+                            AlertUtility.showInformation("Kein Eintrag ausgewählt");
                         }
                         break;
                     case "Remove":
                         if(list.getSelectionModel().getSelectedItem() != null) {
                             items.remove(list.getSelectionModel().getSelectedItem());
                         } else {
-                            AlertUtility.showInformation("Ein Eintrag muss ausgewählt sein!");
+                            AlertUtility.showInformation("Kein Eintrag ausgewählt");
                         }
                         break;
                 }
@@ -121,14 +129,6 @@ public class Setting extends VBox {
         });
 
         return menu;
-    }
-
-    public void setTitle(String title) {
-        this.title.set(title);
-    }
-
-    public ObservableList<String> getItems() {
-        return items;
     }
 
 
@@ -145,7 +145,7 @@ public class Setting extends VBox {
                 if(!items.contains(res)) {
                     items.add(res);
                 } else {
-                    AlertUtility.showError("Es gibt bereits einen Eintrag mit diesem Wert!");
+                    AlertUtility.showError("Dieser Eintrag ist bereits vorhanden");
                 }
             });
         });
@@ -157,7 +157,7 @@ public class Setting extends VBox {
             if(list.getSelectionModel().getSelectedItem() != null) {
                 list.edit(list.getSelectionModel().getSelectedIndex());
             } else {
-                AlertUtility.showInformation("Ein Eintrag muss ausgewählt sein!");
+                AlertUtility.showInformation("Kein Eintrag ausgewählt");
             }
         });
 
@@ -168,7 +168,7 @@ public class Setting extends VBox {
             if(list.getSelectionModel().getSelectedItem() != null) {
                 items.remove(list.getSelectionModel().getSelectedItem());
             } else {
-                AlertUtility.showInformation("Ein Eintrag muss ausgewählt sein!");
+                AlertUtility.showInformation("Kein Eintrag ausgewählt");
             }
         });
 

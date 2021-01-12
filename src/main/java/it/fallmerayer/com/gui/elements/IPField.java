@@ -16,12 +16,13 @@ import java.util.ArrayList;
 @DefaultProperty("promptTexts")
 public class IPField extends HBox {
 
-    private final ArrayList<NumberField> numberFields;
-    private NumberField maskField;
-
     private final ObservableList<String> promptTexts = FXCollections.observableArrayList();
     private final BooleanProperty maskVisible = new SimpleBooleanProperty(true);
     private final BooleanProperty maskDisabled = new SimpleBooleanProperty(false);
+
+    private final ArrayList<NumberField> numberFields;
+    private NumberField maskField;
+
 
     public IPField() {
         numberFields = new ArrayList<>();
@@ -48,6 +49,47 @@ public class IPField extends HBox {
                 numberFields.get(i).setPromptText(c.getList().get(i));
             }
         });
+    }
+
+    public int getMask() {
+        return maskField.getValue();
+    }
+
+    public final boolean isMaskVisible() {
+        return maskVisible.get();
+    }
+
+    public final void setMaskVisible(boolean hasMask) {
+        this.maskVisible.set(hasMask);
+    }
+
+    public boolean isMaskDisabled() {
+        return maskDisabled.get();
+    }
+
+    public void setMaskDisabled(boolean maskDisabled) {
+        this.maskDisabled.set(maskDisabled);
+    }
+
+    public ObservableList<String> getPromptTexts() {
+        return promptTexts;
+    }
+
+    public String getIP() {
+        StringBuilder ip = new StringBuilder();
+
+        for (NumberField n : numberFields) {
+            int val = n.getValue();
+            if (val != -1) {
+                ip.append(val).append(".");
+            } else {
+                return null;
+            }
+        }
+
+        ip.deleteCharAt(ip.length() - 1);
+
+        return ip.toString();
     }
 
 
@@ -96,47 +138,5 @@ public class IPField extends HBox {
     }
 
 
-    public String getIP() {
-        StringBuilder ip = new StringBuilder();
 
-        for (NumberField n : numberFields) {
-            int val = n.getValue();
-            if (val != -1) {
-                ip.append(val).append(".");
-            } else {
-                return null;
-            }
-        }
-
-        ip.deleteCharAt(ip.length() - 1);
-
-        return ip.toString();
-    }
-
-    public int getMask() {
-        return maskField.getValue();
-    }
-
-
-
-
-    public final boolean isMaskVisible() {
-        return maskVisible.get();
-    }
-
-    public final void setMaskVisible(boolean hasMask) {
-        this.maskVisible.set(hasMask);
-    }
-
-    public boolean isMaskDisabled() {
-        return maskDisabled.get();
-    }
-
-    public void setMaskDisabled(boolean maskDisabled) {
-        this.maskDisabled.set(maskDisabled);
-    }
-
-    public ObservableList<String> getPromptTexts() {
-        return promptTexts;
-    }
 }

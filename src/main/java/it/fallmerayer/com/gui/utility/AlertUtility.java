@@ -20,11 +20,11 @@ public class AlertUtility {
     }
 
     public static Optional<ButtonType> showError(String content) {
-        return showAlert(Alert.AlertType.ERROR, "Error", content);
+        return showAlert(Alert.AlertType.ERROR, "Fehler", content);
     }
 
     public static Optional<ButtonType> showInformation(String content) {
-        return showAlert(Alert.AlertType.INFORMATION, "Information", content);
+        return showAlert(Alert.AlertType.INFORMATION, "Info", content);
     }
 
     public static Optional<String> showInput(String title, String content) {

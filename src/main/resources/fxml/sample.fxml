@@ -20,7 +20,7 @@
     </top>
     <center>
         <JFXTabPane fx:id="tabPane" nodeOrientation="LEFT_TO_RIGHT" tabClosingPolicy="UNAVAILABLE">
-            <Tab text="Scan">
+            <Tab text="Scanner">
                 <VBox>
                     <HBox spacing="10">
                         <VBox spacing="20">
@@ -52,7 +52,7 @@
                         </padding>
                     </HBox>
                     <JFXTabPane fx:id="scannerResultsTabPane" nodeOrientation="LEFT_TO_RIGHT" tabClosingPolicy="UNAVAILABLE">
-                        <Tab text="No Results">
+                        <Tab text="Kein Ergebnis">
 
                         </Tab>
                     </JFXTabPane>
@@ -63,11 +63,11 @@
                     <HBox spacing="10">
                         <VBox spacing="20">
                             <HBox spacing="10" HBox.hgrow="ALWAYS">
-                                <Label>Enable Listener: </Label>
+                                <Label>Listner aktivieren: </Label>
                                 <JFXCheckBox fx:id="cb_Listener" onAction="#on_Listener_Change" />
                             </HBox>
                             <HBox spacing="10" HBox.hgrow="ALWAYS">
-                                <Label style="-fx-translate-y: 4px">Port Number: </Label>
+                                <Label style="-fx-translate-y: 4px">Port Nummer: </Label>
                                 <NumberField promptText="187" maxDigits="5" maxValue="65536" fx:id="txt_Port"/>
                             </HBox>
                         </VBox>
@@ -77,13 +77,13 @@
                         </padding>
                     </HBox>
                     <JFXTabPane fx:id="listenerResultsTabPane" nodeOrientation="LEFT_TO_RIGHT" tabClosingPolicy="UNAVAILABLE">
-                        <Tab text="No Results">
+                        <Tab text="Kein Ergebnis">
 
                         </Tab>
                     </JFXTabPane>
                 </VBox>
             </Tab>
-            <Tab text="Settings">
+            <Tab text="Einstellungen">
                 <HBox spacing="90">
                     <Setting title="MIBs" fx:id="settingMIBs"/>
                     <Setting title="OIDs" fx:id="settingOIDs"/>

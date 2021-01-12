@@ -45,7 +45,7 @@ public class GUI implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        combo_IP.getItems().setAll("Host", "Network", "Custom-Range");
+        combo_IP.getItems().setAll("Host", "Netzwerk", "Benutzerdefinierter-Bereich");
         combo_IP.getSelectionModel().select(0);
 
         combo_Method.getItems().addAll( "GetNext", "Get");
@@ -74,11 +74,19 @@ public class GUI implements Initializable {
         INSTANCE = this;
     }
 
+    public void addScannerResult(String community, String ip, VarbindCollection collection) {
+        addResult(scannerCommunityTabs, scannerResultsTabPane, community, ip, collection);
+    }
+
+    public void addListenerResult(String community, String ip, VarbindCollection collection) {
+        addResult(listenerCommunityTabs, listenerResultsTabPane, community, ip, collection);
+    }
+
 
     public void on_ComboIP_Change() {
         String selected = combo_IP.getSelectionModel().getSelectedItem();
-        startAddress.setMaskDisabled(!selected.equalsIgnoreCase("Network"));
-        endAddress.setDisable(!selected.equalsIgnoreCase("Custom-Range"));
+        startAddress.setMaskDisabled(!selected.equalsIgnoreCase("Netzwerk"));
+        endAddress.setDisable(!selected.equalsIgnoreCase("Benutzerdefinierter-Bereich"));
 
         endAddress.clear();
         startAddress.clear();
@@ -96,7 +104,7 @@ public class GUI implements Initializable {
         List<String> communities = combo_Community.getSelectedCommunities();
 
         if(communities.isEmpty()) {
-            AlertUtility.showError("Es muss mindestens eine Community ausgewählt sein!");
+            AlertUtility.showError("Keine Community ausgewählt");
             return;
         }
 
@@ -112,9 +120,39 @@ public class GUI implements Initializable {
         }
     }
 
+    public void log(String message) {
+        Platform.runLater(() -> {
+            if(tabPane.getSelectionModel().getSelectedItem() != null) {
+                String text = tabPane.getSelectionModel().getSelectedItem().getText();
+                if(text.equalsIgnoreCase("Scan")) {
+                    txt_Console.appendText(message + "\n");
+                } else if(text.equalsIgnoreCase("Trap Server")) {
+                    txt_ListenerConsole.appendText(message + "\n");
+                }
+            }
+        });
+    }
+
+    public List<String> getSettingMIBs() {
+        return new ArrayList<>(settingMIBs.getItems());
+    }
+
+    public List<String> getSettingOIDs() {
+        return new ArrayList<>(settingOIDs.getItems());
+    }
+
+    public List<String> getSettingCommunities() {
+        return new ArrayList<>(settingCommunities.getItems());
+    }
+
+
+    public static GUI getInstance() {
+        return INSTANCE;
+    }
+
     public void on_Listener_Change() {
         if(cb_Listener.isSelected()) {
-            listener.changePort(txt_Port.getValue() == -1 ? 162 : txt_Port.getValue());
+            listener.changePort(txt_Port.getValue() == -1 ? 187 : txt_Port.getValue());
             listener.start();
         } else {
             listener.stop();
@@ -123,13 +161,7 @@ public class GUI implements Initializable {
     }
 
 
-    public void addScannerResult(String community, String ip, VarbindCollection collection) {
-        addResult(scannerCommunityTabs, scannerResultsTabPane, community, ip, collection);
-    }
 
-    public void addListenerResult(String community, String ip, VarbindCollection collection) {
-        addResult(listenerCommunityTabs, listenerResultsTabPane, community, ip, collection);
-    }
 
     private void addResult(Map<String, CommunityTab> tabs, TabPane pane, String community, String ip, VarbindCollection collection) {
         Platform.runLater(() -> {
@@ -149,18 +181,7 @@ public class GUI implements Initializable {
     }
 
 
-    public void log(String message) {
-        Platform.runLater(() -> {
-            if(tabPane.getSelectionModel().getSelectedItem() != null) {
-                String text = tabPane.getSelectionModel().getSelectedItem().getText();
-                if(text.equalsIgnoreCase("Scan")) {
-                    txt_Console.appendText(message + "\n");
-                } else if(text.equalsIgnoreCase("Trap Server")) {
-                    txt_ListenerConsole.appendText(message + "\n");
-                }
-            }
-        });
-    }
+
 
     public void info(String message) {
         log("[INFO][" + getDateAsString() + "] " + message);
@@ -184,20 +205,5 @@ public class GUI implements Initializable {
     }
 
 
-    public List<String> getSettingMIBs() {
-        return new ArrayList<>(settingMIBs.getItems());
-    }
 
-    public List<String> getSettingOIDs() {
-        return new ArrayList<>(settingOIDs.getItems());
-    }
-
-    public List<String> getSettingCommunities() {
-        return new ArrayList<>(settingCommunities.getItems());
-    }
-
-
-    public static GUI getInstance() {
-        return INSTANCE;
-    }
 }

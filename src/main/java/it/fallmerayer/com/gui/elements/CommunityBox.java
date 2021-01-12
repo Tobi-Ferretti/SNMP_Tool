@@ -44,28 +44,29 @@ public class CommunityBox extends CheckComboBox<String> {
         });
     }
 
-    public ArrayList<String> getSelectedCommunities() {
-        return new ArrayList<>(getCheckModel().getCheckedItems());
+    public void setItems(ObservableList<String> items) {
+        this.items = items;
+
+        addListenerToItems();
     }
 
-
-
-    public int getDefaultSelectedIndex() {
-        return defaultSelectedIndex.get();
+    public ArrayList<String> getSelectedCommunities() {
+        return new ArrayList<>(getCheckModel().getCheckedItems());
     }
 
     public void setDefaultSelectedIndex(int defaultSelectedIndex) {
         this.defaultSelectedIndex.set(defaultSelectedIndex);
     }
 
+    public int getDefaultSelectedIndex() {
+        return defaultSelectedIndex.get();
+    }
+
+
     @Override
     public ObservableList<String> getItems() {
         return items;
     }
 
-    public void setItems(ObservableList<String> items) {
-        this.items = items;
 
-        addListenerToItems();
-    }
 }

@@ -45,7 +45,7 @@ public class VarbindTable extends TableView<VarbindTable.VarbindValue> {
         TableColumn<VarbindValue, String> oidCol = new TableColumn<>("OID");
         oidCol.setCellValueFactory(new PropertyValueFactory<>("oid"));
 
-        TableColumn<VarbindValue, String> valueCol = new TableColumn<>("Response");
+        TableColumn<VarbindValue, String> valueCol = new TableColumn<>("Antwort");
         valueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
 
         getColumns().clear();

@@ -26,7 +26,7 @@ public class SNMPListener {
     //Ändert den Port
     public void changePort(int port) {
         if(port < 1 || port > 65536) {
-            throw new IllegalArgumentException("Port has to be greater than 1 and less than 65536");
+            throw new IllegalArgumentException("Port muss zwischen 1 und 65536 sein");
         }
 
         this.port = port;
