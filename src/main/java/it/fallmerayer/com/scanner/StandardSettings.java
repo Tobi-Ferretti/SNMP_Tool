@@ -1,6 +1,7 @@
 package it.fallmerayer.com.scanner;
 
 
+import it.fallmerayer.com.gui.GUI;
 import org.soulwing.snmp.Mib;
 import org.soulwing.snmp.MibFactory;
 
@@ -13,11 +14,10 @@ import java.util.List;
 
 public class StandardSettings {
 
-    private static final Mib defaultMib;
+    private static final List<String> mibs;
 
     static {
-        defaultMib = MibFactory.getInstance().newMib();
-        List<String> mibs = new ArrayList<>();
+        mibs = new ArrayList<>();
 
         try {
             Reader r = new InputStreamReader(StandardSettings.class.getResourceAsStream("/mibs.txt"));
@@ -30,45 +30,37 @@ public class StandardSettings {
                 }
             }
         } catch (IOException ignore) {}
-
-        for(String m : mibs) {
-            try {
-                defaultMib.load(m);
-            } catch (IOException e) {
-                System.err.println("Failed to load Mib: " + m);
-            }
-        }
     }
 
     //Gibt angegeben Communities zurück
     public static List<String> getCommunities(List<String> communities) {
-        if(communities == null) {
+        if(communities == null || communities.isEmpty()) {
             communities = new ArrayList<>();
+            communities.add("public");
+            communities.add("private");
         }
-        communities.add("public");
+
         return communities;
-    }
-
-
-    //Gibt standart MIB zurück
-    public static Mib getMIB() {
-        return defaultMib;
     }
 
 
     //Gibt standart MIB zurück mit custom MIBS
     public static Mib getMIB(List<String> customMibs) {
-        if(customMibs != null && !customMibs.isEmpty()) {
-            for(String m : customMibs) {
-                try {
-                    defaultMib.load(m);
-                } catch (IOException e) {
-                    System.err.println("Failed to load Mib: " + m);
-                }
+        if(customMibs == null || customMibs.isEmpty()) {
+            customMibs = mibs;
+        }
+
+        Mib mib = MibFactory.getInstance().newMib();
+
+        for(String m : customMibs) {
+            try {
+                mib.load(m);
+            } catch (IOException e) {
+                GUI.getInstance().error("Die MIB " + m + " konnte nicht geladen werden!");
             }
         }
 
-        return defaultMib;
+        return mib;
     }
 
 
@@ -86,5 +78,10 @@ public class StandardSettings {
         oids.add("sysServices" + (useGet ? ".0" : ""));
 
         return oids;
+    }
+
+    //Gibt standart MiBs zurück
+    public static List<String> getMIBs() {
+        return mibs;
     }
 }

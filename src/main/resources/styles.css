@@ -1,11 +1,11 @@
 * {
-    -fx-font-family: Studio Sans1;
+    -fx-font-family: Product Sans;
     -fx-font-size: 13px;
-    -fx-base: #3f474f;
-    -fx-accent: black ;
-    -fx-default-button: #7f878f ;
-    -fx-focus-color: #efefef;
-    -fx-faint-focus-color: #efefef22;
+    -fx-base: #000000;
+    -fx-accent: #03DAC6 ;
+    -fx-default-button: #30373b;
+    -fx-focus-color: #292929;
+    -fx-faint-focus-color: rgba(0, 0, 0, 0.13);
     -fx-focused-text-base-color : ladder(
             -fx-selection-bar,
             -fx-light-text-color 45%,
@@ -17,5 +17,78 @@
 }
 
 .check-box {
-    -fx-text-fill: #3f474f;
+    -fx-text-fill: #121212;
 }
+.settings-button {
+    -fx-pref-width: 120px;
+}
+.jfx-button {
+    -jfx-button-type: RAISED;
+    -fx-background-color: black;
+    -fx-text-fill: #03DAC6;
+    -fx-font-weight: bold;
+
+}
+.tab{
+    -fx-background-color: black;
+    -fx-text-fill: #03DAC6;
+}
+.jfx-tab-pane .headers-region {
+    -fx-background-color: black;
+}
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: black;
+}
+.jfx-tab-pane .tab-selected-line {
+    -fx-background-color: #03DAC6;
+}
+.jfx-tab-pane .tab-header-area .jfx-rippler{
+    -jfx-rippler-fill :#03DAC6;
+}
+
+.jfx-check-box {
+    -jfx-checked-color: #03DAC6;
+    -jfx-unchecked-color: black;
+}
+
+/* Styling checkmark */
+.jfx-check-box .mark{
+    -fx-border-color: white;
+}
+.jfx-combo-box .arrow{
+    -fx-border-color:  #03DAC6;
+}
+.combo-box{
+    -fx-font-weight: bold;
+}
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover {
+    -fx-background-color: #BB86FC;
+}
+.text-field .input-line
+{
+    -fx-background-color: #121212;
+}
+.text-field
+{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.jfx-text-field
+{
+    -jfx-focus-color: #03DAC6;
+}
+
+.label{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.text-area .content{
+    -fx-background-color: #121212;
+}
+.text-area{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+

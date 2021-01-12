@@ -1,14 +1,14 @@
 package it.fallmerayer.com.gui.elements;
 
 import it.fallmerayer.com.gui.utility.TableUtility;
-import it.fallmerayer.com.gui.elements.VarbindTable.VarbindValue;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.soulwing.snmp.Varbind;
-import org.soulwing.snmp.VarbindCollection;
 
-public class VarbindTable extends TableView<VarbindValue> {
+import java.util.Collection;
+
+public class VarbindTable extends TableView<VarbindTable.VarbindValue> {
 
     private boolean isDefault = true;
 
@@ -21,19 +21,21 @@ public class VarbindTable extends TableView<VarbindValue> {
     }
 
 
-    public void setVarbinds(VarbindCollection collection) {
+    public void setVarbinds(Collection<Varbind> collection) {
+        if(collection == null) {
+            return;
+        }
+
         if(isDefault) {
             setColumnResizePolicy(UNCONSTRAINED_RESIZE_POLICY);
             initializeTable();
         }
 
-        if(collection != null) {
-            getItems().clear();
-            for(Varbind varbind : collection) {
-                getItems().add(new VarbindValue(varbind));
-            }
-            TableUtility.autoFitTable(this);
+        getItems().clear();
+        for(Varbind varbind : collection) {
+            getItems().add(new VarbindValue(varbind));
         }
+        TableUtility.autoFitTable(this);
     }
 
     private void initializeTable() {
