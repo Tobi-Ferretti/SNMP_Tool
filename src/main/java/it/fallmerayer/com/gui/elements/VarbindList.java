@@ -1,10 +1,11 @@
 package it.fallmerayer.com.gui.elements;
 
 
+import com.jfoenix.controls.JFXListView;
 import javafx.beans.value.ChangeListener;
 import javafx.scene.control.ListView;
 
-public class VarbindList extends ListView<String> {
+public class VarbindList extends JFXListView<String> {
 
     public VarbindList(ChangeListener<? super String> listener) {
         this.getSelectionModel().selectedItemProperty().addListener(listener);

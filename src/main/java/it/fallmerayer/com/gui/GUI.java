@@ -124,7 +124,7 @@ public class GUI implements Initializable {
         Platform.runLater(() -> {
             if(tabPane.getSelectionModel().getSelectedItem() != null) {
                 String text = tabPane.getSelectionModel().getSelectedItem().getText();
-                if(text.equalsIgnoreCase("Scan")) {
+                if(text.equalsIgnoreCase("Scanner")) {
                     txt_Console.appendText(message + "\n");
                 } else if(text.equalsIgnoreCase("Trap Server")) {
                     txt_ListenerConsole.appendText(message + "\n");
